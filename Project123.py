@@ -13,7 +13,7 @@ import os, time
 
 x = np.load('image.npz')['arr_0']
 y = pd.read_csv('labels.csv')['labels']
-print(pd.series(y).value_counts())
+print(pd.Series(y).value_counts())
 classes = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z']
 n = len(classes)
 
@@ -45,7 +45,7 @@ while(cap.isOpened()):
 
         im_pil = Image.fromarray(roi)
         img_bw = im_pil.convert('L')
-        img_resized = img_bw.resize((28,28), Image.ANTIALIAS)
+        img_resized = img_bw.resize((22,30), Image.ANTIALIAS)
 
         img_inverted = PIL.ImageOps.invert(img_resized)
 
